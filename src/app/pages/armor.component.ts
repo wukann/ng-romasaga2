@@ -15,7 +15,7 @@ import { Armor, ARMORS } from '../models/armor';
 
       <ng-container matColumnDef="kind">
         <mat-header-cell *matHeaderCellDef>種別</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.kind}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{armorKinds[element.kind]}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="price">
@@ -107,6 +107,15 @@ export class ArmorComponent implements OnInit {
   ];
   armors: Armor[] = ARMORS;
 
+  armorKinds: { [key: number]: string } = {
+    0: '頭',
+    1: '鎧',
+    2: '全身鎧',
+    3: '腕',
+    4: '足',
+    5: '戦闘服',
+    6: 'アクセサリー'
+  };
   constructor() { }
 
   ngOnInit() {
