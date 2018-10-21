@@ -16,7 +16,7 @@ import { ARMORS } from '../models/armor';
 
       <ng-container matColumnDef="kind">
         <mat-header-cell *matHeaderCellDef>種別</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{armorKinds[element.kind]}} </mat-cell>
+        <mat-cell *matCellDef="let element" class="kind-cell"> {{armorKinds[element.kind]}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="price">
@@ -93,6 +93,9 @@ import { ARMORS } from '../models/armor';
     .numeric-cell {
       justify-content: flex-end;
     }
+    .kind-cell {
+      justify-content: center;
+    }
     .mat-header-cell {
       justify-content: center;
     }
@@ -112,11 +115,11 @@ export class ArmorComponent implements OnInit {
   armorKinds: { [key: number]: string } = {
     0: '頭',
     1: '鎧',
-    2: '全身鎧',
+    2: '全',
     3: '腕',
     4: '足',
-    5: '戦闘服',
-    6: 'アクセサリー'
+    5: '服',
+    6: 'ア'
   };
 
   @ViewChild(MatSort) sort: MatSort;
