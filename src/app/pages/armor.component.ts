@@ -20,57 +20,57 @@ import { Armor, ARMORS } from '../models/armor';
 
       <ng-container matColumnDef="price">
         <mat-header-cell *matHeaderCellDef>価格</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.price}} </mat-cell>
+        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.price}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="zan">
         <mat-header-cell *matHeaderCellDef>斬</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.zan}} </mat-cell>
+        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.zan}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="ou">
         <mat-header-cell *matHeaderCellDef>殴</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.ou}} </mat-cell>
+        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.ou}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="totsu">
         <mat-header-cell *matHeaderCellDef>突</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.totsu}} </mat-cell>
+        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.totsu}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="sha">
         <mat-header-cell *matHeaderCellDef>射</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.sha}} </mat-cell>
+        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.sha}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="netsu">
         <mat-header-cell *matHeaderCellDef>熱</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.netsu}} </mat-cell>
+        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.netsu}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="rei">
         <mat-header-cell *matHeaderCellDef>冷</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.rei}} </mat-cell>
+        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.rei}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="rai">
         <mat-header-cell *matHeaderCellDef>雷</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.rai}} </mat-cell>
+        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.rai}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="jou">
         <mat-header-cell *matHeaderCellDef>状</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.jou}} </mat-cell>
+        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.jou}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="against">
         <mat-header-cell *matHeaderCellDef>耐性</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.jou}} </mat-cell>
+        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.jou}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="weight">
         <mat-header-cell *matHeaderCellDef>重量</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.weight}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="remarks">
@@ -89,7 +89,12 @@ import { Armor, ARMORS } from '../models/armor';
     </mat-table>
   `,
   styles: [`
-
+    .numeric-cell {
+      justify-content: flex-end;
+    }
+    .mat-header-cell {
+      justify-content: center;
+    }
   `]
 })
 export class ArmorComponent implements OnInit {
