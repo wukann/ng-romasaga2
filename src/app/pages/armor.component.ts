@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { Armor, ARMORS } from '../models/armor';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSort, MatTableDataSource } from '@angular/material';
+import { ARMORS } from '../models/armor';
 
 @Component({
   selector: 'app-armor',
   template: `
     <h1>防具</h1>
 
-    <mat-table [dataSource]="armors" class="mat-elevation-z8">
+    <mat-table [dataSource]="armors" matSort class="mat-elevation-z8">
 
       <ng-container matColumnDef="name">
         <mat-header-cell *matHeaderCellDef>名称</mat-header-cell>
@@ -19,57 +20,57 @@ import { Armor, ARMORS } from '../models/armor';
       </ng-container>
 
       <ng-container matColumnDef="price">
-        <mat-header-cell *matHeaderCellDef>価格</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>価格</mat-header-cell>
         <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.price}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="zan">
-        <mat-header-cell *matHeaderCellDef>斬</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>斬</mat-header-cell>
         <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.zan}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="ou">
-        <mat-header-cell *matHeaderCellDef>殴</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>殴</mat-header-cell>
         <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.ou}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="totsu">
-        <mat-header-cell *matHeaderCellDef>突</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>突</mat-header-cell>
         <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.totsu}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="sha">
-        <mat-header-cell *matHeaderCellDef>射</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>射</mat-header-cell>
         <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.sha}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="netsu">
-        <mat-header-cell *matHeaderCellDef>熱</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>熱</mat-header-cell>
         <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.netsu}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="rei">
-        <mat-header-cell *matHeaderCellDef>冷</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>冷</mat-header-cell>
         <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.rei}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="rai">
-        <mat-header-cell *matHeaderCellDef>雷</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>雷</mat-header-cell>
         <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.rai}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="jou">
-        <mat-header-cell *matHeaderCellDef>状</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>状</mat-header-cell>
         <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.jou}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="against">
-        <mat-header-cell *matHeaderCellDef>耐性</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>耐性</mat-header-cell>
         <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.jou}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="weight">
-        <mat-header-cell *matHeaderCellDef>重量</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>重量</mat-header-cell>
         <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.weight}} </mat-cell>
       </ng-container>
 
@@ -105,7 +106,8 @@ export class ArmorComponent implements OnInit {
     'netsu', 'rei', 'rai', 'jou',
     'weight', 'remarks', 'whereToGet'
   ];
-  armors: Armor[] = ARMORS;
+
+  armors = new MatTableDataSource(ARMORS);
 
   armorKinds: { [key: number]: string } = {
     0: '頭',
@@ -116,9 +118,13 @@ export class ArmorComponent implements OnInit {
     5: '戦闘服',
     6: 'アクセサリー'
   };
+
+  @ViewChild(MatSort) sort: MatSort;
+
   constructor() { }
 
   ngOnInit() {
+    this.armors.sort = this.sort;
   }
 
 }
