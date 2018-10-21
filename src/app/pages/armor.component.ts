@@ -75,7 +75,7 @@ import { Armor, ARMORS } from '../models/armor';
 
       <ng-container matColumnDef="remarks">
         <mat-header-cell *matHeaderCellDef>備考</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.remarks}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.remarks.length === 0 ? '-' : element.remarks}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="whereToGet">
