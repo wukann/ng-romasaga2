@@ -89,9 +89,7 @@ import { Armor, ARMORS } from '../models/armor';
     </mat-table>
   `,
   styles: [`
-    table {
-      width: 100%;
-    }
+
   `]
 })
 export class ArmorComponent implements OnInit {
