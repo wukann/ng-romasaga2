@@ -104,10 +104,10 @@ import { ARMORS } from '../models/armor';
 export class ArmorComponent implements OnInit {
 
   displayedColumns: string[] = [
-    'name', 'kind', 'price',
+    'name', 'kind',
     'zan', 'ou', 'totsu', 'sha',
     'netsu', 'rei', 'rai', 'jou',
-    'weight', 'remarks', 'whereToGet'
+    'weight', 'remarks'
   ];
 
   armors = new MatTableDataSource(ARMORS);
