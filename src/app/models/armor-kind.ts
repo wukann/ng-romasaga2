@@ -6,9 +6,9 @@ export interface ArmorKind {
 export const ARMOR_KINDS: ArmorKind[] = [
   { id: 0, name: '頭' },
   { id: 1, name: '鎧' },
-  { id: 2, name: '全' },
+  { id: 2, name: '全身鎧' },
   { id: 3, name: '腕' },
   { id: 4, name: '足' },
-  { id: 5, name: '服' },
-  { id: 6, name: 'ア' },
+  { id: 5, name: '戦闘服' },
+  { id: 6, name: 'アクセサリー' },
 ];
