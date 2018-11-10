@@ -328,9 +328,18 @@ THE SOFTWARE.
 @angular/animations
 MIT
 
+@angular/material/core
+
 @angular/material/sort
 
 @angular/material/table
+
+@angular/material/form-field
+
+@angular/forms
+MIT
+
+@angular/material/select
 
 zone.js
 MIT
