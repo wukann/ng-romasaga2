@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, MatTableDataSource } from '@angular/material';
 import { ARMORS } from '../models/armor';
+import { ARMOR_KINDS } from '../models/armor-kind';
 
 @Component({
   selector: 'app-armor',
@@ -16,7 +17,7 @@ import { ARMORS } from '../models/armor';
 
       <ng-container matColumnDef="kind">
         <mat-header-cell *matHeaderCellDef>種別</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="kind-cell"> {{armorKinds[element.kind]}} </mat-cell>
+        <mat-cell *matCellDef="let element" class="kind-cell"> {{armorKinds[element.kind].name}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="price">
@@ -111,16 +112,7 @@ export class ArmorComponent implements OnInit {
   ];
 
   armors = new MatTableDataSource(ARMORS);
-
-  armorKinds: { [key: number]: string } = {
-    0: '頭',
-    1: '鎧',
-    2: '全',
-    3: '腕',
-    4: '足',
-    5: '服',
-    6: 'ア'
-  };
+  armorKinds = ARMOR_KINDS;
 
   @ViewChild(MatSort) sort: MatSort;
 
