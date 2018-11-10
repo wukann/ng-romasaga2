@@ -1,12 +1,21 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, MatTableDataSource } from '@angular/material';
 import { ARMORS } from '../models/armor';
-import { ARMOR_KINDS } from '../models/armor-kind';
+import { ARMOR_KINDS, ArmorKind } from '../models/armor-kind';
 
 @Component({
   selector: 'app-armor',
   template: `
     <h1>防具</h1>
+
+    <mat-form-field>
+      <mat-select placeholder="防具種別" #select (selectionChange)="applyFilter(select.value)">
+        <mat-option>すべて</mat-option>
+        <mat-option *ngFor="let kind of armorKinds" [value]="kind">
+          {{kind.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
 
     <mat-table [dataSource]="armors" matSort class="mat-elevation-z8">
 
@@ -120,6 +129,13 @@ export class ArmorComponent implements OnInit {
 
   ngOnInit() {
     this.armors.sort = this.sort;
+    this.armors.filterPredicate = (data, filter) => {
+      return data.kind === Number.parseInt(filter, 10);
+    };
+  }
+
+  applyFilter(value: ArmorKind) {
+    this.armors.filter = value ? value.id.toString() : '';
   }
 
 }
