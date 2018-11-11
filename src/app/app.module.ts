@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -24,7 +23,6 @@ import { ArmorComponent } from './pages/armor.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    MatTableModule,
     MatSortModule,
     MatSelectModule,
     MatSidenavModule,
