@@ -17,7 +17,7 @@ import { ARMOR_KINDS, ArmorKind } from '../models/armor-kind';
       </mat-select>
     </mat-form-field>
 
-    <table cdk-table [dataSource]="armors" matSort>
+    <table cdk-table [dataSource]="armors" matSort  class="ui celled table">
 
       <ng-container cdkColumnDef="name">
         <th cdk-header-cell *cdkHeaderCellDef>名称</th>
@@ -31,47 +31,47 @@ import { ARMOR_KINDS, ArmorKind } from '../models/armor-kind';
 
       <ng-container cdkColumnDef="price">
         <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>価格</th>
-        <td cdk-cell *cdkCellDef="let element"> {{element.price}} </td>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.price}} </td>
       </ng-container>
 
       <ng-container cdkColumnDef="zan">
         <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>斬</th>
-        <td cdk-cell *cdkCellDef="let element"> {{element.zan}} </td>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.zan}} </td>
       </ng-container>
 
       <ng-container cdkColumnDef="ou">
         <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>殴</th>
-        <td cdk-cell *cdkCellDef="let element"> {{element.ou}} </td>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.ou}} </td>
       </ng-container>
 
       <ng-container cdkColumnDef="totsu">
         <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>突</th>
-        <td cdk-cell *cdkCellDef="let element"> {{element.totsu}} </td>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.totsu}} </td>
       </ng-container>
 
       <ng-container cdkColumnDef="sha">
         <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>射</th>
-        <td cdk-cell *cdkCellDef="let element"> {{element.sha}} </td>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.sha}} </td>
       </ng-container>
 
       <ng-container cdkColumnDef="netsu">
         <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>熱</th>
-        <td cdk-cell *cdkCellDef="let element"> {{element.netsu}} </td>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.netsu}} </td>
       </ng-container>
 
       <ng-container cdkColumnDef="rei">
         <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>冷</th>
-        <td cdk-cell *cdkCellDef="let element"> {{element.rei}} </td>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.rei}} </td>
       </ng-container>
 
       <ng-container cdkColumnDef="rai">
         <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>雷</th>
-        <td cdk-cell *cdkCellDef="let element"> {{element.rai}} </td>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.rai}} </td>
       </ng-container>
 
       <ng-container cdkColumnDef="jou">
         <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>状</th>
-        <td cdk-cell *cdkCellDef="let element"> {{element.jou}} </td>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.jou}} </td>
       </ng-container>
 
       <ng-container cdkColumnDef="against">
@@ -81,7 +81,7 @@ import { ARMOR_KINDS, ArmorKind } from '../models/armor-kind';
 
       <ng-container cdkColumnDef="weight">
         <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>重量</th>
-        <td cdk-cell *cdkCellDef="let element"> {{element.weight}} </td>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.weight}} </td>
       </ng-container>
 
       <ng-container cdkColumnDef="remarks">
