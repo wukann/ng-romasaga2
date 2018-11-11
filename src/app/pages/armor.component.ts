@@ -17,98 +17,89 @@ import { ARMOR_KINDS, ArmorKind } from '../models/armor-kind';
       </mat-select>
     </mat-form-field>
 
-    <mat-table [dataSource]="armors" matSort class="mat-elevation-z8">
+    <table cdk-table [dataSource]="armors" matSort  class="ui celled table">
 
-      <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef>名称</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      <ng-container cdkColumnDef="name">
+        <th cdk-header-cell *cdkHeaderCellDef>名称</th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.name}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="kind">
-        <mat-header-cell *matHeaderCellDef>種別</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="kind-cell"> {{armorKinds[element.kind].name}} </mat-cell>
+      <ng-container cdkColumnDef="kind">
+        <th cdk-header-cell *cdkHeaderCellDef>種別</th>
+        <td cdk-cell *cdkCellDef="let element"> {{armorKinds[element.kind].name}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="price">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>価格</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.price}} </mat-cell>
+      <ng-container cdkColumnDef="price">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>価格</th>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.price}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="zan">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>斬</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.zan}} </mat-cell>
+      <ng-container cdkColumnDef="zan">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>斬</th>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.zan}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="ou">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>殴</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.ou}} </mat-cell>
+      <ng-container cdkColumnDef="ou">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>殴</th>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.ou}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="totsu">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>突</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.totsu}} </mat-cell>
+      <ng-container cdkColumnDef="totsu">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>突</th>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.totsu}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="sha">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>射</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.sha}} </mat-cell>
+      <ng-container cdkColumnDef="sha">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>射</th>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.sha}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="netsu">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>熱</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.netsu}} </mat-cell>
+      <ng-container cdkColumnDef="netsu">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>熱</th>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.netsu}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="rei">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>冷</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.rei}} </mat-cell>
+      <ng-container cdkColumnDef="rei">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>冷</th>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.rei}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="rai">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>雷</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.rai}} </mat-cell>
+      <ng-container cdkColumnDef="rai">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>雷</th>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.rai}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="jou">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>状</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.jou}} </mat-cell>
+      <ng-container cdkColumnDef="jou">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>状</th>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.jou}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="against">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>耐性</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.jou}} </mat-cell>
+      <ng-container cdkColumnDef="against">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>耐性</th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.jou}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="weight">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>重量</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.weight}} </mat-cell>
+      <ng-container cdkColumnDef="weight">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>重量</th>
+        <td cdk-cell *cdkCellDef="let element" class="right aligned"> {{element.weight}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="remarks">
-        <mat-header-cell *matHeaderCellDef>備考</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.remarks.length === 0 ? '-' : element.remarks}} </mat-cell>
+      <ng-container cdkColumnDef="remarks">
+        <th cdk-header-cell *cdkHeaderCellDef>備考</th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.remarks.length === 0 ? '-' : element.remarks}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="whereToGet">
-        <mat-header-cell *matHeaderCellDef>入手場所</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.whereToGet}} </mat-cell>
+      <ng-container cdkColumnDef="whereToGet">
+        <th cdk-header-cell *cdkHeaderCellDef>入手場所</th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.whereToGet}} </td>
       </ng-container>
 
-      <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true;"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      <tr cdk-header-row *cdkHeaderRowDef="displayedColumns; sticky: true;"></tr>
+      <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
 
-    </mat-table>
+    </table>
   `,
   styles: [`
-    .numeric-cell {
-      justify-content: flex-end;
-    }
-    .kind-cell {
-      justify-content: center;
-    }
-    .mat-header-cell {
-      justify-content: center;
-    }
   `]
 })
 export class ArmorComponent implements OnInit {
