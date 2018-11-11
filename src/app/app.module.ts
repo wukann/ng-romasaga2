@@ -8,6 +8,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { CdkTableModule } from '@angular/cdk/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,7 +29,8 @@ import { ArmorComponent } from './pages/armor.component';
     MatSelectModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    CdkTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -17,85 +17,85 @@ import { ARMOR_KINDS, ArmorKind } from '../models/armor-kind';
       </mat-select>
     </mat-form-field>
 
-    <table mat-table [dataSource]="armors" matSort class="mat-elevation-z8">
+    <table cdk-table [dataSource]="armors" matSort>
 
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>名称</th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      <ng-container cdkColumnDef="name">
+        <th cdk-header-cell *cdkHeaderCellDef>名称</th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.name}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="kind">
-        <th mat-header-cell *matHeaderCellDef>種別</th>
-        <td mat-cell *matCellDef="let element"> {{armorKinds[element.kind].name}} </td>
+      <ng-container cdkColumnDef="kind">
+        <th cdk-header-cell *cdkHeaderCellDef>種別</th>
+        <td cdk-cell *cdkCellDef="let element"> {{armorKinds[element.kind].name}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="price">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>価格</th>
-        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+      <ng-container cdkColumnDef="price">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>価格</th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.price}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="zan">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>斬</th>
-        <td mat-cell *matCellDef="let element"> {{element.zan}} </td>
+      <ng-container cdkColumnDef="zan">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>斬</th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.zan}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="ou">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>殴</th>
-        <td mat-cell *matCellDef="let element"> {{element.ou}} </td>
+      <ng-container cdkColumnDef="ou">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>殴</th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.ou}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="totsu">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>突</th>
-        <td mat-cell *matCellDef="let element"> {{element.totsu}} </td>
+      <ng-container cdkColumnDef="totsu">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>突</th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.totsu}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="sha">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>射</th>
-        <td mat-cell *matCellDef="let element"> {{element.sha}} </td>
+      <ng-container cdkColumnDef="sha">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>射</th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.sha}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="netsu">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>熱</th>
-        <td mat-cell *matCellDef="let element"> {{element.netsu}} </td>
+      <ng-container cdkColumnDef="netsu">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>熱</th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.netsu}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="rei">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>冷</th>
-        <td mat-cell *matCellDef="let element"> {{element.rei}} </td>
+      <ng-container cdkColumnDef="rei">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>冷</th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.rei}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="rai">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>雷</th>
-        <td mat-cell *matCellDef="let element"> {{element.rai}} </td>
+      <ng-container cdkColumnDef="rai">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>雷</th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.rai}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="jou">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>状</th>
-        <td mat-cell *matCellDef="let element"> {{element.jou}} </td>
+      <ng-container cdkColumnDef="jou">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>状</th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.jou}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="against">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>耐性</th>
-        <td mat-cell *matCellDef="let element"> {{element.jou}} </td>
+      <ng-container cdkColumnDef="against">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>耐性</th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.jou}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="weight">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>重量</th>
-        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+      <ng-container cdkColumnDef="weight">
+        <th cdk-header-cell *cdkHeaderCellDef mat-sort-header>重量</th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.weight}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="remarks">
-        <th mat-header-cell *matHeaderCellDef>備考</th>
-        <td mat-cell *matCellDef="let element"> {{element.remarks.length === 0 ? '-' : element.remarks}} </td>
+      <ng-container cdkColumnDef="remarks">
+        <th cdk-header-cell *cdkHeaderCellDef>備考</th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.remarks.length === 0 ? '-' : element.remarks}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="whereToGet">
-        <th mat-header-cell *matHeaderCellDef>入手場所</th>
-        <td mat-cell *matCellDef="let element"> {{element.whereToGet}} </td>
+      <ng-container cdkColumnDef="whereToGet">
+        <th cdk-header-cell *cdkHeaderCellDef>入手場所</th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.whereToGet}} </td>
       </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true;"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr cdk-header-row *cdkHeaderRowDef="displayedColumns; sticky: true;"></tr>
+      <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
 
     </table>
   `,
