@@ -17,98 +17,89 @@ import { ARMOR_KINDS, ArmorKind } from '../models/armor-kind';
       </mat-select>
     </mat-form-field>
 
-    <mat-table [dataSource]="armors" matSort class="mat-elevation-z8">
+    <table mat-table [dataSource]="armors" matSort class="mat-elevation-z8">
 
       <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef>名称</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        <th mat-header-cell *matHeaderCellDef>名称</th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
       </ng-container>
 
       <ng-container matColumnDef="kind">
-        <mat-header-cell *matHeaderCellDef>種別</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="kind-cell"> {{armorKinds[element.kind].name}} </mat-cell>
+        <th mat-header-cell *matHeaderCellDef>種別</th>
+        <td mat-cell *matCellDef="let element"> {{armorKinds[element.kind].name}} </td>
       </ng-container>
 
       <ng-container matColumnDef="price">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>価格</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.price}} </mat-cell>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>価格</th>
+        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
       </ng-container>
 
       <ng-container matColumnDef="zan">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>斬</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.zan}} </mat-cell>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>斬</th>
+        <td mat-cell *matCellDef="let element"> {{element.zan}} </td>
       </ng-container>
 
       <ng-container matColumnDef="ou">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>殴</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.ou}} </mat-cell>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>殴</th>
+        <td mat-cell *matCellDef="let element"> {{element.ou}} </td>
       </ng-container>
 
       <ng-container matColumnDef="totsu">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>突</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.totsu}} </mat-cell>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>突</th>
+        <td mat-cell *matCellDef="let element"> {{element.totsu}} </td>
       </ng-container>
 
       <ng-container matColumnDef="sha">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>射</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.sha}} </mat-cell>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>射</th>
+        <td mat-cell *matCellDef="let element"> {{element.sha}} </td>
       </ng-container>
 
       <ng-container matColumnDef="netsu">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>熱</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.netsu}} </mat-cell>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>熱</th>
+        <td mat-cell *matCellDef="let element"> {{element.netsu}} </td>
       </ng-container>
 
       <ng-container matColumnDef="rei">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>冷</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.rei}} </mat-cell>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>冷</th>
+        <td mat-cell *matCellDef="let element"> {{element.rei}} </td>
       </ng-container>
 
       <ng-container matColumnDef="rai">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>雷</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.rai}} </mat-cell>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>雷</th>
+        <td mat-cell *matCellDef="let element"> {{element.rai}} </td>
       </ng-container>
 
       <ng-container matColumnDef="jou">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>状</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.jou}} </mat-cell>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>状</th>
+        <td mat-cell *matCellDef="let element"> {{element.jou}} </td>
       </ng-container>
 
       <ng-container matColumnDef="against">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>耐性</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.jou}} </mat-cell>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>耐性</th>
+        <td mat-cell *matCellDef="let element"> {{element.jou}} </td>
       </ng-container>
 
       <ng-container matColumnDef="weight">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>重量</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="numeric-cell"> {{element.weight}} </mat-cell>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>重量</th>
+        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
       </ng-container>
 
       <ng-container matColumnDef="remarks">
-        <mat-header-cell *matHeaderCellDef>備考</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.remarks.length === 0 ? '-' : element.remarks}} </mat-cell>
+        <th mat-header-cell *matHeaderCellDef>備考</th>
+        <td mat-cell *matCellDef="let element"> {{element.remarks.length === 0 ? '-' : element.remarks}} </td>
       </ng-container>
 
       <ng-container matColumnDef="whereToGet">
-        <mat-header-cell *matHeaderCellDef>入手場所</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.whereToGet}} </mat-cell>
+        <th mat-header-cell *matHeaderCellDef>入手場所</th>
+        <td mat-cell *matCellDef="let element"> {{element.whereToGet}} </td>
       </ng-container>
 
-      <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true;"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true;"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
-    </mat-table>
+    </table>
   `,
   styles: [`
-    .numeric-cell {
-      justify-content: flex-end;
-    }
-    .kind-cell {
-      justify-content: center;
-    }
-    .mat-header-cell {
-      justify-content: center;
-    }
   `]
 })
 export class ArmorComponent implements OnInit {
